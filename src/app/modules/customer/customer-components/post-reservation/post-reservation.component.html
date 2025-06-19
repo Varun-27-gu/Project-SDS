@@ -1,0 +1,77 @@
+<div class="parent">
+  <div class="child">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="postReservation()">
+      
+      <!-- Centered Title in full-width column -->
+      <div nz-row>
+        <div nz-col nzSpan="24">
+          <h2 class="form-title">Dining Booking</h2>
+        </div>
+      </div>
+
+      <div nz-row>
+
+        <!-- Table Type -->
+        <div nz-col nzSpan="24" style="margin-bottom: 16px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is Required!">
+              <nz-select
+                formControlName="tableType"
+                nzShowSearch
+                nzAllowClear
+                nzPlaceHolder="Select a Table Type"
+              >
+                <nz-option
+                  *ngFor="let table of TableType"
+                  [nzLabel]="table"
+                  [nzValue]="table"
+                ></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <!-- Date & Time -->
+        <div nz-col nzSpan="24" style="margin-bottom: 16px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback>
+              <nz-date-picker
+                formControlName="dateTime"
+                nzFormat="yyyy-MM-dd HH:mm"
+                nzPlaceHolder="Select Date and Time"
+                [nzShowTime]="{ nzFormat: 'HH:mm' }"
+              ></nz-date-picker>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <!-- Description -->
+        <div nz-col nzSpan="24" style="margin-bottom: 16px;">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is Required!">
+              <textarea
+                formControlName="description"
+                rows="3"
+                nz-input
+                placeholder="Description"
+              ></textarea>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <!-- Submit Button -->
+        <div nz-col nzSpan="24" style="text-align: center;">
+          <button
+            nz-button
+            class="login-form-button"
+            [nzType]="'primary'"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

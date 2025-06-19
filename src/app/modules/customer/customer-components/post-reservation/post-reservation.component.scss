@@ -1,0 +1,57 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #001529;
+  font-weight: 600;
+}
+
+
+
+/* Parent holds the form centered in viewport */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Child is the form container */
+.child {
+  width: 90%;
+  max-width: 600px;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Full-width controls */
+[nz-form] {
+  width: 100%;
+}
+
+nz-form-control {
+  width: 100%;
+}
+
+/* Button styling */
+.login-form-button {
+  width: 100%;
+  background-color: #001529;
+  border: none;
+  color: white;
+  height: 40px;
+  font-weight: 500;
+}
+
+.login-form-button:hover {
+  background-color: #002a66;
+}
